@@ -37,7 +37,10 @@ export default function ServiceDetailPage({ params }) {
 
   const id = params.id;
   const singleData = data.find((d) => d._id == id); 
-  return (
+  if(singleData)
+  {
+
+    return (
     <div>
       <h1>ServiceDetailPage</h1>
 
@@ -47,4 +50,21 @@ export default function ServiceDetailPage({ params }) {
       <img src={singleData.service_image} alt="image" />
     </div>
   );
+
+  }
+
+  else
+  {
+
+    return(
+
+      <>
+      
+      <p>Not Found </p>
+      </>
+    )
+  }
+
+   
+  
 }
